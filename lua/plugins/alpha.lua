@@ -1,5 +1,6 @@
 return {
     "goolord/alpha-nvim",
+    event = "VimEnter",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
@@ -27,14 +28,5 @@ return {
         }
 
         alpha.setup(dashboard.opts)
-
-        -- Auto-open alpha on startup when no file is passed
-        vim.api.nvim_create_autocmd("VimEnter", {
-            callback = function()
-                if vim.fn.argc() == 0 then
-                    require("alpha").start()
-                end
-            end,
-        })
     end,
 }
