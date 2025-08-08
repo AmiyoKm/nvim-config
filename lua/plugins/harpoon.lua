@@ -12,7 +12,7 @@ local function toggle_telescope(harpoon_files)
         promt_title = "Working List"
     })
 
-    require("telescope.pickers").new(opts, {
+   require("telescope.pickers").new(opts, {
         finder = require("telescope.finders").new_table({
             results = file_paths,
         }),

@@ -1,22 +1,22 @@
-local function enable_transparency()
-	vim.api.nvim_set_hl(0,"Normal",{bg = "none"})
-end
-return 
-	{
-		{
-			"folke/tokyonight.nvim",
-			config = function()
-				vim.cmd.colorscheme "tokyonight"
-				enable_transparency()
-			end
-		},
-        {
-            "nvim-lualine/lualine.nvim",
-            dependencies = {
-                "nvim-tree/nvim-web-devicons",
-            },
-            opts = {
-                theme = "tokyonight",
-            }
+return {
+    {
+        "folke/tokyonight.nvim",
+        -- Add these options
+        opts = {
+            transparent = true, -- Enable this to make the background transparent
+            terminal_colors = false,
         },
-	}
+        -- Your config function is fine
+        config = function(_, opts)
+            require("tokyonight").setup(opts)
+            vim.cmd.colorscheme "tokyonight-moon"
+        end
+    },
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {
+            theme = "tokyonight",
+        }
+    },
+}

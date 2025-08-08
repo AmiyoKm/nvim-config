@@ -20,12 +20,12 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("i", "jj", "<Esc>", { noremap = false })
 
-vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+
 
 
 -- neotree open and close
 vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { silent = true })
+
 
 
 -- make file executable
@@ -44,3 +44,10 @@ vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
+
+
+-- Navigate vim panes better
+vim.keymap.set('n', '<C-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<C-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<C-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<C-l>', ':wincmd l<CR>')

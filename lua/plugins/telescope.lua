@@ -1,8 +1,19 @@
 return {
-    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
-        local builtin = require('telescope.builtin')        
+        -- Add telescope setup and options here
+        require('telescope').setup {
+            defaults = {
+                file_ignore_patterns = {
+                    "node_modules",
+                    ".git",
+                },
+            },
+        }
+
+        local builtin = require('telescope.builtin')
         -- Find Files
         vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F]ind [F]iles' })
         -- Find Word (Live Grep)
@@ -15,5 +26,6 @@ return {
         vim.keymap.set('n', '<leader>fm', builtin.marks, { desc = '[F]ind [M]arks' })
         -- Help Tags (remapped from fh)
         vim.keymap.set('n', '<leader>ft', builtin.help_tags, { desc = '[F]ind Help [T]ags' })
+        
     end
 }

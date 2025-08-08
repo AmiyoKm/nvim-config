@@ -65,16 +65,23 @@ This is a personal Neovim configuration.
 | `<C-p>` | Previous file in harpoon |
 | `<C-n>` | Next file in harpoon |
 
-### Copilot
+### Tmux Navigator
 
 | Keybinding | Action |
 |---|---|
-| `<C-J>` (insert) | Accept copilot suggestion |
-| `<C-K>` (insert) | Dismiss copilot suggestion |
-| `<leader>cp` | Open copilot panel |
+| `<c-h>` | Navigate left |
+| `<c-j>` | Navigate down |
+| `<c-k>` | Navigate up |
+| `<c-l>` | Navigate right |
+| `<c-\>` | Navigate previous |
 
-### Biscuits
+### Vim Test
 
 | Keybinding | Action |
 |---|---|
-| `<leader>cb` | Toggle biscuits |
+| `<leader>t` | Run nearest test |
+| `<leader>T` | Run test file |
+| `<leader>a` | Run test suite |
+| `<leader>l` | Run last test |
+| `<leader>g` | Visit last test file |
+
